@@ -96,7 +96,7 @@ const getUrlCode = async function (req, res) {
 
         if (data) {
 
-            res.status(307).redirect(data.longUrl)
+            res.status(302).redirect(data.longUrl)
 
         }
         else {
@@ -110,7 +110,7 @@ const getUrlCode = async function (req, res) {
 
             }
             await SET_ASYNC(`${urlCode}`, JSON.stringify(findUrlCode))
-            return res.status(307).redirect(findUrlCode.longUrl)
+            return res.status(302).redirect(findUrlCode.longUrl)
 
         }
     }
@@ -124,6 +124,7 @@ const getUrlCode = async function (req, res) {
 
 module.exports.createShortUrl = createShortUrl
 module.exports.getUrlCode = getUrlCode
+
 
 
 
